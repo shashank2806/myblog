@@ -1,11 +1,11 @@
 ---
 title: "Welcome To My Blog"
 author: "Shashank Shekhar"
-date: "2022-06-10"
+date: "2022-10-03"
 categories: [news]
 ---
 
-This is the first post in a Quarto blog. Welcome!
+This is my first blog. Welcome!
 
 ![](thumbnail.jpg)
 

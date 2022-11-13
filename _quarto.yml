@@ -6,6 +6,8 @@ website:
   navbar:
     right:
       - about.qmd
+      - icon: website
+        href: https://shashankshekhar.me
       - icon: github
         href: https://github.com/shashank2806
       - icon: twitter
