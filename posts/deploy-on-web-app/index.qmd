@@ -1,7 +1,7 @@
 ---
-title: "Deploy ML Application on Azure App Service"
+title: "Deploy ML Application on Azure Web App"
 author: "Shashank Shekhar"
-description: "In this blog, I am going to show how to deploy a Machine Learning API on Azure App Service."
+description: "In this blog, I am going to show how to deploy a Machine Learning API on Azure App Service (App Service)."
 date: "2022-11-20"
 categories: [Azure, Flask, API]
 ---
@@ -21,7 +21,7 @@ For this blog, I have trained a deep-learning model with help of PyTorch. The AP
 
 1.	An Flask/FastAPI API is running locally.
 2.	Postman - for API Testing
-3.	Azure Account (Oviously!)
+3.	Azure Account (Obviously!)
 
 
 This is my folder structure. 
@@ -53,7 +53,7 @@ This is my API running locally on postman, it has route named '/pred' which take
 As I have tested the API on my machine. Now it is ready for deployment.
 ![*API testing though postman on localhost*](2.png){fig-align="center"}
 
-### Step - 2: Create Azure Resources
+### Step - 1: Create Azure Resources
 I am now going to create an Azure web app. A web app is the quickest method to deploy your APIs on the cloud. It supports both code and docker containers. In this blog, we are focusing on deployment through code.
 
 ![](3.png){fig-align="center"}
@@ -74,7 +74,7 @@ This is the URL where the web app will be hosted, There is nothing there right n
 
 ![](6.png){fig-align="center"}
 
-### Step 3: Push code to the Web App
+### Step 2: Push code to the Web App
 
 1. On the Azure Portal, go to the Deployment centre and select local git as the deployment source. You will get the git clone path, and username and password in the Credentials tab. Tip: The username is just `${web app name}`, in my case `$pytorch-demo`, Do not enter the full username provided.
 ![](7.png){fig-align="center"}
@@ -97,7 +97,7 @@ You need `git` to be initialised (`git init`) in the directory, and commit (`git
 
 Great!! As you can see, We have deployed the API over the cloud, now anyone can access it. We just need to give the user Endpoint and Key.
 
-### Step 4: Bonus- Connect it with the front-end.
+### Step 3: Bonus- Connect it with the front-end.
 We have deployed our backend API on the web app. As you may have noticed there is an `index.html` in the directory. This contains a very simple front-end. We can connect the back-end API to the front-end.
 
 The `index.html` is hosted through GitHub Pages(free hosting). The the hosted URL is <https://shashankshekhar.me/simple-classifier-demo/>
@@ -120,6 +120,8 @@ Let's try with our cat image. On this front-end.
 
 ![](11.png){fig-align="center"}
 Voila! We have got the result, The API is taking to the font-end, the request we are making on our web browser is going to our API and fetching the results from there.
+
+*The API might not be responsing by the time you are looking at this web page - I will delete the App Service later.*
 
 ### Final Words
 

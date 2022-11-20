@@ -8,9 +8,9 @@
 
 <meta name="author" content="Shashank Shekhar">
 <meta name="dcterms.date" content="2022-11-20">
-<meta name="description" content="In this blog, I am going to show how to deploy a Machine Learning API on Azure App Service.">
+<meta name="description" content="In this blog, I am going to show how to deploy a Machine Learning API on Azure App Service (App Service).">
 
-<title>Shashank’s Blog - Deploy ML Application on Azure App Service</title>
+<title>Shashank’s Blog - Deploy ML Application on Azure Web App</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -173,10 +173,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Deploy ML Application on Azure App Service</h1>
+      <h1 class="title">Deploy ML Application on Azure Web App</h1>
                   <div>
         <div class="description">
-          In this blog, I am going to show how to deploy a Machine Learning API on Azure App Service.
+          In this blog, I am going to show how to deploy a Machine Learning API on Azure App Service (App Service).
         </div>
       </div>
                           <div class="quarto-categories">
@@ -229,7 +229,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol type="1">
 <li>An Flask/FastAPI API is running locally.</li>
 <li>Postman - for API Testing</li>
-<li>Azure Account (Oviously!)</li>
+<li>Azure Account (Obviously!)</li>
 </ol>
 <p>This is my folder structure. Out of these files 3 are important for deployment.</p>
 <ol type="1">
@@ -260,8 +260,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>As I have tested the API on my machine. Now it is ready for deployment. <img src="2.png" class="img-fluid" data-fig-align="center" alt="API testing though postman on localhost"></p>
 </section>
-<section id="step---2-create-azure-resources" class="level3">
-<h3 class="anchored" data-anchor-id="step---2-create-azure-resources">Step - 2: Create Azure Resources</h3>
+<section id="step---1-create-azure-resources" class="level3">
+<h3 class="anchored" data-anchor-id="step---1-create-azure-resources">Step - 1: Create Azure Resources</h3>
 <p>I am now going to create an Azure web app. A web app is the quickest method to deploy your APIs on the cloud. It supports both code and docker containers. In this blog, we are focusing on deployment through code.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -280,8 +280,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </figure>
 </div>
 </section>
-<section id="step-3-push-code-to-the-web-app" class="level3">
-<h3 class="anchored" data-anchor-id="step-3-push-code-to-the-web-app">Step 3: Push code to the Web App</h3>
+<section id="step-2-push-code-to-the-web-app" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-push-code-to-the-web-app">Step 2: Push code to the Web App</h3>
 <ol type="1">
 <li><p>On the Azure Portal, go to the Deployment centre and select local git as the deployment source. You will get the git clone path, and username and password in the Credentials tab. Tip: The username is just <code>${web app name}</code>, in my case <code>$pytorch-demo</code>, Do not enter the full username provided. <img src="7.png" class="img-fluid" data-fig-align="center"></p></li>
 <li><p>Go to the directory containing the code. You can also test it on my demo code. Clone the github repo using <code>git clone https://github.com/shashank2806/simple-classifier-demo.git</code> You need <code>git</code> to be initialised (<code>git init</code>) in the directory, and commit (<code>git commit</code>) the changes you want to be uploaded.</p></li>
@@ -297,8 +297,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Great!! As you can see, We have deployed the API over the cloud, now anyone can access it. We just need to give the user Endpoint and Key.</p>
 </section>
-<section id="step-4-bonus--connect-it-with-the-front-end." class="level3">
-<h3 class="anchored" data-anchor-id="step-4-bonus--connect-it-with-the-front-end.">Step 4: Bonus- Connect it with the front-end.</h3>
+<section id="step-3-bonus--connect-it-with-the-front-end." class="level3">
+<h3 class="anchored" data-anchor-id="step-3-bonus--connect-it-with-the-front-end.">Step 3: Bonus- Connect it with the front-end.</h3>
 <p>We have deployed our backend API on the web app. As you may have noticed there is an <code>index.html</code> in the directory. This contains a very simple front-end. We can connect the back-end API to the front-end.</p>
 <p>The <code>index.html</code> is hosted through GitHub Pages(free hosting). The the hosted URL is <a href="https://shashankshekhar.me/simple-classifier-demo/" class="uri">https://shashankshekhar.me/simple-classifier-demo/</a></p>
 <p>If you look into index.html, You will find a JavaScript - Fetch is used for calling the API. (You can get the code snippet to connect with help of postman.)</p>
@@ -313,6 +313,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>You can make some minor changes on this front-end to tailor it to your need. I have changed the Endpoint URL to the web app.</p>
 <p>Let’s try with our cat image. On this front-end.</p>
 <p><img src="11.png" class="img-fluid" data-fig-align="center"> Voila! We have got the result, The API is taking to the font-end, the request we are making on our web browser is going to our API and fetching the results from there.</p>
+<p><em>The API might not be responsing by the time you are looking at this web page - I will delete the App Service later.</em></p>
 </section>
 <section id="final-words" class="level3">
 <h3 class="anchored" data-anchor-id="final-words">Final Words</h3>
