@@ -10,5 +10,11 @@
   },
   "posts/post-with-code/index.qmd": {
     "index.html": "2817393a"
+  },
+  "posts/Azure Blogs/index.qmd": {
+    "index.html": "5c0d1318"
+  },
+  "posts/deploy-on-web-app/index.qmd": {
+    "index.html": "de49ef42"
   }
 }

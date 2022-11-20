@@ -1,7 +1,7 @@
 ---
-title: "Deploy ML Application on Azure Web App"
+title: "Deploy ML Application on Azure App Service"
 author: "Shashank Shekhar"
-description: "In this blog, I am going to show how to deploy a Machine Learning API on Azure App Service (App Service)."
+description: "In this blog, I am going to show how to deploy a Machine Learning API on Azure App Service (Web App)."
 date: "2022-11-20"
 categories: [Azure, Flask, API]
 ---
@@ -60,7 +60,7 @@ I am now going to create an Azure web app. A web app is the quickest method to d
 
 Create a web app on the Azure portal. Select the subscription and Resource Group. You need to give it a unique name. Select OS and your python version. In my case, I have selected 3.10. Select the region.
 
-Now we have to select a **app service plan**. Most people confusion between web app and app service. App service is the hardware on which you web app is deployed. Single App service can host multiple web apps. Keep this in mind when selecting your app service plan.
+Now we have to select a **app service plan**. Most people have confusion between web app and app service.(Even both terms are used interchangeably) *App service is the hardware on which you web app is deployed.* Single App service can host multiple web apps. Keep this in mind when selecting your app service plan.
 I am selecting B1 plan, which is capable enough to host this API.
 
 ![](4.png){fig-align="center"}
