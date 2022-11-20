@@ -8,9 +8,9 @@
 
 <meta name="author" content="Shashank Shekhar">
 <meta name="dcterms.date" content="2022-11-20">
-<meta name="description" content="In this blog, I am going to show how to deploy a Machine Learning API on Azure App Service (App Service).">
+<meta name="description" content="In this blog, I am going to show how to deploy a Machine Learning API on Azure App Service (Web App).">
 
-<title>Shashank’s Blog - Deploy ML Application on Azure Web App</title>
+<title>Shashank’s Blog - Deploy ML Application on Azure App Service</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -173,10 +173,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Deploy ML Application on Azure Web App</h1>
+      <h1 class="title">Deploy ML Application on Azure App Service</h1>
                   <div>
         <div class="description">
-          In this blog, I am going to show how to deploy a Machine Learning API on Azure App Service (App Service).
+          In this blog, I am going to show how to deploy a Machine Learning API on Azure App Service (Web App).
         </div>
       </div>
                           <div class="quarto-categories">
@@ -269,7 +269,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </figure>
 </div>
 <p>Create a web app on the Azure portal. Select the subscription and Resource Group. You need to give it a unique name. Select OS and your python version. In my case, I have selected 3.10. Select the region.</p>
-<p>Now we have to select a <strong>app service plan</strong>. Most people confusion between web app and app service. App service is the hardware on which you web app is deployed. Single App service can host multiple web apps. Keep this in mind when selecting your app service plan. I am selecting B1 plan, which is capable enough to host this API.</p>
+<p>Now we have to select a <strong>app service plan</strong>. Most people have confusion between web app and app service.(Even both terms are used interchangeably) <em>App service is the hardware on which you web app is deployed.</em> Single App service can host multiple web apps. Keep this in mind when selecting your app service plan. I am selecting B1 plan, which is capable enough to host this API.</p>
 <p><img src="4.png" class="img-fluid" data-fig-align="center"> <img src="5.png" class="img-fluid" data-fig-align="center"></p>
 <p>Click <strong>Review+Create</strong></p>
 <p>The web app is created. A URL is also assigned - <a href="https://pytorch-demo.azurewebsites.net/" class="uri">https://pytorch-demo.azurewebsites.net/</a></p>
