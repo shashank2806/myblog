@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/linear-regression/Linear_Regression.html",
       "/posts/deploy-on-web-app/index.html",
       "/posts/welcome/index.html"
     ]
