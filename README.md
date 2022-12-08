@@ -1,3 +1,4 @@
-# Blogs
+Archived the blog repo. It was being used for blogs. Now the blogs are integrated with the portfolio repo ![Link](https://github.com/shashank2806/shashank2806.github.io).
 
-This Quarto Blog setup is the backend for my the blog page hosted [here](https://shashankshekhar.me/myblog).
+
+Using this repo now for Blog Comments using ![utterances](https://utteranc.es/)

@@ -16,5 +16,8 @@
   },
   "posts/deploy-on-web-app/index.qmd": {
     "index.html": "de49ef42"
+  },
+  "posts/linear-regression/Linear_Regression.ipynb": {
+    "Linear_Regression.html": "0d38fe3c"
   }
 }
